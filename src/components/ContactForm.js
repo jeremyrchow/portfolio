@@ -43,9 +43,13 @@ class ContactForm extends Component{
 
     render(){
         return (
+
             <form id="contact-form" onSubmit={this.handleSubmit} method="POST">
-                <p>Want to reach out? I'm currently open to new opportunities! Feel free to send a message and I'll
-                get back to you as soon as possible! </p>
+                <h1>Contact</h1>
+                <p>Want to reach out? I'm currently open to new opportunities! Feel free to send a message to 
+                <strong> jeremyrchow@gmail.com! </strong></p>
+                {/*
+
                 <div className="form-group">
                     <label htmlFor="name">Name</label>
                     <input type="text" className="form-control" id="name" />
@@ -58,7 +62,8 @@ class ContactForm extends Component{
                     <label htmlFor="message">Message</label>
                     <textarea className="form-control" rows="5" id="message"></textarea>
                 </div>
-                <button type="submit" className="btn btn-primary" style={{float: "right"}}>Submit</button>
+                <button type="submit" className="btn btn-primary" style={{float: "right"}}>Submit</button> 
+            */}
             </form>
         );
     }
