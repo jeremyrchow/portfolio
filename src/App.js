@@ -25,7 +25,7 @@ function App() {
             <SocialMediaLinks />
             <p> I'm a Data Scientist passionate about using machine learning models to impact business
              decisions and gather meaningful insights.</p>
-            <p style={{paddingTop: '2em'}}> I am comfortable in the following technologies: </p>
+            <p style={{paddingTop: '2em'}}> I have worked with the following technologies: </p>
             
             <SkillsGridList />
         </div>
@@ -41,9 +41,11 @@ function App() {
                 viewership based on previous \
                 streaming activity and time series analysis on streamer/viewer balance data on Twitch. \
                 Built complete data pipeline that automated Twitch API calls on an Amazon EC2 instance \
-                and stored data in SQL database on an Amazon RDS instance."}
+                using cron jobs, then \
+                stored data in SQL database on an Amazon RDS instance."}
 
                 github="https://github.com/jeremyrchow/Twitch_Streamers_Recommender"
+                medium="https://towardsdatascience.com/building-a-growth-focused-game-recommender-for-twitch-streamers-7389e3868f2e"
             /> 
 
             <ProjectContainer 
@@ -72,8 +74,14 @@ function App() {
                 description = 
                 {["Generated text in the style of Edgar Allen Poe, specifically emulating his writing style \
                 in ", <a key="p3_link" href = "https://www.kaggle.com/c/spooky-author-identification">
-                select short horror stories.</a>, "Uses an embedding layer followed by 2 stacked LSTM layers. \
-                Model built on Tensorflow framework with Keras library. \
+                select short horror stories.</a>, " Uses an embedding layer followed by 2 stacked LSTM layers. \
+                Model built on Tensorflow framework with Keras library. Training data was 7900 sentences \
+                which were tokenized using Keras Tokenizer then fed into the model using a sliding window of \
+                20 tokens. The model would then use the first 19 tokens of the sequence to predict the 20th. \
+                This resulted in 200,000 training sequences that were then fed into the embedding layer of size 50, \
+                two 100 node LSTM layers, then a Dense layer with RELU activation, followed by a Dense layer with \
+                Softmax activation and output shape of vocabulary size in order to output probabilities of 0-1 \
+                for all words in the vocabulary. \
                 "]}
 
                 github="https://github.com/jeremyrchow/text-generation-kaggle"
@@ -84,7 +92,11 @@ function App() {
                 
                 description = 
                 {["Predicted whether a Lending Club loan would default using random forest and gradient boosting \
-                classifiers"]}
+                classifiers. Input data consisted of 235,000 rows and 145 columns with loan data (amount, monthly \
+                payment, time issued), \
+                account information, settlement information, hardship details, investor funding information directly \
+                sourced from LendingClub website. There is a class imbalance of about 80% paid off loans and 20% \
+                defaulted loans. Achieved an ROC-AUC score of 0.726"]}
 
                 github="https://github.com/jeremyrchow/lending_club_default_model"
             />
